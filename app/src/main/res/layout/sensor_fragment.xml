@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="166dp"
+        android:layout_height="166dp"
+        android:layout_marginTop="16dp"
+        android:adjustViewBounds="false"
+        android:cropToPadding="false"
+        android:src="@drawable/pm10"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp" />
+
+
+    <ImageView
+        android:layout_width="166dp"
+        android:layout_height="166dp"
+        android:layout_marginTop="164dp"
+        android:adjustViewBounds="false"
+        android:cropToPadding="false"
+        android:src="@drawable/pm2_5"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="229dp" />
+
+    <ImageView
+        android:layout_width="166dp"
+        android:layout_height="166dp"
+        android:layout_marginTop="356dp"
+        android:adjustViewBounds="false"
+        android:cropToPadding="false"
+        android:src="@drawable/temp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <ImageView
+        android:layout_width="166dp"
+        android:layout_height="166dp"
+        android:layout_marginTop="548dp"
+        android:adjustViewBounds="false"
+        android:cropToPadding="false"
+        android:src="@drawable/humidity"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="229dp" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TableRow>
+        <com.rey.material.widget.Switch
+            style="@style/Material.Widget.Switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="150dp"
+            android:checked="false"
+            android:gravity="center"
+            app:sw_animDuration="200" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="150dp"
+            android:text="Światło - wejście" />
+    </TableRow>
+
+    <TableRow>
+        <com.rey.material.widget.Switch
+            style="@style/Material.Widget.Switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="25dp"
+            android:checked="false"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="25dp"
+            android:text="Światło - chodnik" />
+    </TableRow>
+
+    <TableRow>
+        <com.rey.material.widget.Switch
+            style="@style/Material.Widget.Switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="25dp"
+            android:checked="false"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="25dp"
+            android:text="LED - salon" />
+    </TableRow>
+
+
+    <TableRow>
+        <com.rey.material.widget.Switch
+            style="@style/Material.Widget.Switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="25dp"
+            android:checked="false"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="25dp"
+            android:text="LED - okno wschód" />
+    </TableRow>
+
+
+    <TableRow>
+        <com.rey.material.widget.Switch
+            style="@style/Material.Widget.Switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="25dp"
+            android:checked="false"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="25dp"
+            android:text="LED - okno południe" />
+    </TableRow>
+
+
+</TableLayout>
