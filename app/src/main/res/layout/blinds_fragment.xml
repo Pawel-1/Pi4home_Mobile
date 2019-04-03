@@ -1,126 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:gravity="center">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
 
-    <com.rey.material.widget.Slider
-        style="@style/Material.Widget.Slider"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
+        android:layout_height="match_parent"
         android:gravity="center"
-        app:sl_discreteMode="true"
-        app:sl_maxValue="100"
-        app:sl_minValue="0"
-        app:sl_stepValue="5"
-        app:sl_trackCap="square"
-        app:sl_trackSize="4dp"
-        app:sl_transformAnimDuration="30"
-        app:sl_travelAnimDuration="150"
-        app:sl_value="50" />
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="25dp"
-        android:text="Wschód - prawe" />
+        <TextView
+            android:id="@+id/blinds_textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="25dp"
+            android:text="Wschód - lewe" />
 
-    <com.rey.material.widget.Slider
-        style="@style/Material.Widget.Slider"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        android:gravity="center"
-        app:sl_discreteMode="true"
-        app:sl_maxValue="100"
-        app:sl_minValue="0"
-        app:sl_stepValue="5"
-        app:sl_trackCap="square"
-        app:sl_trackSize="4dp"
-        app:sl_transformAnimDuration="30"
-        app:sl_travelAnimDuration="150"
-        app:sl_value="50" />
+        <com.rey.material.widget.Slider
+            style="@style/Material.Widget.Slider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:gravity="center"
+            app:sl_discreteMode="true"
+            app:sl_maxValue="100"
+            app:sl_minValue="0"
+            app:sl_stepValue="5"
+            app:sl_trackCap="square"
+            app:sl_trackSize="4dp"
+            app:sl_transformAnimDuration="30"
+            app:sl_travelAnimDuration="150"
+            app:sl_value="50" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="60dp"
-        android:text="Południe - lewe" />
+        <TextView
+            android:id="@+id/blinds_textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="25dp"
+            android:text="Wschód - prawe" />
 
-    <com.rey.material.widget.Slider
-        style="@style/Material.Widget.Slider"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        android:gravity="center"
-        app:sl_discreteMode="true"
-        app:sl_maxValue="100"
-        app:sl_minValue="0"
-        app:sl_stepValue="5"
-        app:sl_trackCap="square"
-        app:sl_trackSize="4dp"
-        app:sl_transformAnimDuration="30"
-        app:sl_travelAnimDuration="150"
-        app:sl_value="50" />
+        <com.rey.material.widget.Slider
+            style="@style/Material.Widget.Slider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:gravity="center"
+            app:sl_discreteMode="true"
+            app:sl_maxValue="100"
+            app:sl_minValue="0"
+            app:sl_stepValue="5"
+            app:sl_trackCap="square"
+            app:sl_trackSize="4dp"
+            app:sl_transformAnimDuration="30"
+            app:sl_travelAnimDuration="150"
+            app:sl_value="50" />
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="25dp"
-        android:text="Południe - środek" />
+        <TextView
+            android:id="@+id/blinds_textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="60dp"
+            android:text="Południe - lewe" />
 
-    <com.rey.material.widget.Slider
-        style="@style/Material.Widget.Slider"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        android:gravity="center"
-        app:sl_discreteMode="true"
-        app:sl_maxValue="100"
-        app:sl_minValue="0"
-        app:sl_stepValue="5"
-        app:sl_trackCap="square"
-        app:sl_trackSize="4dp"
-        app:sl_transformAnimDuration="30"
-        app:sl_travelAnimDuration="150"
-        app:sl_value="50" />
+        <com.rey.material.widget.Slider
+            style="@style/Material.Widget.Slider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:gravity="center"
+            app:sl_discreteMode="true"
+            app:sl_maxValue="100"
+            app:sl_minValue="0"
+            app:sl_stepValue="5"
+            app:sl_trackCap="square"
+            app:sl_trackSize="4dp"
+            app:sl_transformAnimDuration="30"
+            app:sl_travelAnimDuration="150"
+            app:sl_value="50" />
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="25dp"
-        android:text="Południe - prawe" />
+        <TextView
+            android:id="@+id/blinds_textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="25dp"
+            android:text="Południe - środek" />
 
-    <com.rey.material.widget.Slider
-        style="@style/Material.Widget.Slider"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        android:gravity="center"
-        app:sl_discreteMode="true"
-        app:sl_maxValue="100"
-        app:sl_minValue="0"
-        app:sl_stepValue="5"
-        app:sl_trackCap="square"
-        app:sl_trackSize="4dp"
-        app:sl_transformAnimDuration="5000"
-        app:sl_travelAnimDuration="150"
-        app:sl_value="50" />
+        <com.rey.material.widget.Slider
+            style="@style/Material.Widget.Slider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:gravity="center"
+            app:sl_discreteMode="true"
+            app:sl_maxValue="100"
+            app:sl_minValue="0"
+            app:sl_stepValue="5"
+            app:sl_trackCap="square"
+            app:sl_trackSize="4dp"
+            app:sl_transformAnimDuration="30"
+            app:sl_travelAnimDuration="150"
+            app:sl_value="50" />
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/blinds_textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="25dp"
+            android:text="Południe - prawe" />
+
+        <com.rey.material.widget.Slider
+            style="@style/Material.Widget.Slider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:gravity="center"
+            app:sl_discreteMode="true"
+            app:sl_maxValue="100"
+            app:sl_minValue="0"
+            app:sl_stepValue="5"
+            app:sl_trackCap="square"
+            app:sl_trackSize="4dp"
+            app:sl_transformAnimDuration="5000"
+            app:sl_travelAnimDuration="150"
+            app:sl_value="50" />
+
+    </LinearLayout>
+
+</ScrollView>
