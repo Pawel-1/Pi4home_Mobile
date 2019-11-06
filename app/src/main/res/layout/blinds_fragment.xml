@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
@@ -20,22 +18,16 @@
             android:layout_marginTop="25dp"
             android:text="Wschód - lewe" />
 
-        <com.rey.material.widget.Slider
-            style="@style/Material.Widget.Slider"
+        <SeekBar
+            android:id="@+id/largeWindowLeft"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
             android:gravity="center"
-            app:sl_discreteMode="true"
-            app:sl_maxValue="100"
-            app:sl_minValue="0"
-            app:sl_stepValue="5"
-            app:sl_trackCap="square"
-            app:sl_trackSize="4dp"
-            app:sl_transformAnimDuration="30"
-            app:sl_travelAnimDuration="150"
-            app:sl_value="50" />
+            android:min="0"
+            android:max="100"
+            />
 
         <TextView
             android:id="@+id/blinds_textView2"
@@ -45,22 +37,16 @@
             android:layout_marginTop="25dp"
             android:text="Wschód - prawe" />
 
-        <com.rey.material.widget.Slider
-            style="@style/Material.Widget.Slider"
+        <SeekBar
+            android:id="@+id/largeWindowRight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
             android:gravity="center"
-            app:sl_discreteMode="true"
-            app:sl_maxValue="100"
-            app:sl_minValue="0"
-            app:sl_stepValue="5"
-            app:sl_trackCap="square"
-            app:sl_trackSize="4dp"
-            app:sl_transformAnimDuration="30"
-            app:sl_travelAnimDuration="150"
-            app:sl_value="50" />
+            android:min="0"
+            android:max="100"
+            />
 
         <TextView
             android:id="@+id/blinds_textView3"
@@ -70,22 +56,16 @@
             android:layout_marginTop="60dp"
             android:text="Południe - lewe" />
 
-        <com.rey.material.widget.Slider
-            style="@style/Material.Widget.Slider"
+        <SeekBar
+            android:id="@+id/smallWindowLeft"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
             android:gravity="center"
-            app:sl_discreteMode="true"
-            app:sl_maxValue="100"
-            app:sl_minValue="0"
-            app:sl_stepValue="5"
-            app:sl_trackCap="square"
-            app:sl_trackSize="4dp"
-            app:sl_transformAnimDuration="30"
-            app:sl_travelAnimDuration="150"
-            app:sl_value="50" />
+            android:min="0"
+            android:max="100"
+            />
 
         <TextView
             android:id="@+id/blinds_textView4"
@@ -95,22 +75,16 @@
             android:layout_marginTop="25dp"
             android:text="Południe - środek" />
 
-        <com.rey.material.widget.Slider
-            style="@style/Material.Widget.Slider"
+        <SeekBar
+            android:id="@+id/smallWindowMiddle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
             android:gravity="center"
-            app:sl_discreteMode="true"
-            app:sl_maxValue="100"
-            app:sl_minValue="0"
-            app:sl_stepValue="5"
-            app:sl_trackCap="square"
-            app:sl_trackSize="4dp"
-            app:sl_transformAnimDuration="30"
-            app:sl_travelAnimDuration="150"
-            app:sl_value="50" />
+            android:min="0"
+            android:max="100"
+            />
 
         <TextView
             android:id="@+id/blinds_textView5"
@@ -120,23 +94,16 @@
             android:layout_marginTop="25dp"
             android:text="Południe - prawe" />
 
-        <com.rey.material.widget.Slider
-            style="@style/Material.Widget.Slider"
+        <SeekBar
+            android:id="@+id/smallWindowRight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
             android:gravity="center"
-            app:sl_discreteMode="true"
-            app:sl_maxValue="100"
-            app:sl_minValue="0"
-            app:sl_stepValue="5"
-            app:sl_trackCap="square"
-            app:sl_trackSize="4dp"
-            app:sl_transformAnimDuration="5000"
-            app:sl_travelAnimDuration="150"
-            app:sl_value="50" />
-
+            android:min="0"
+            android:max="100"
+            />
     </LinearLayout>
 
 </ScrollView>
