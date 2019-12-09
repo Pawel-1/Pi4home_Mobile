@@ -5,13 +5,11 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.example.pi4homemobile.APIs.JsonDataReceiver;
 import com.example.pi4homemobile.APIs.LightApiService;
 import com.example.pi4homemobile.R;
 import com.example.pi4homemobile.model.Light;
@@ -24,15 +22,15 @@ import java.util.Properties;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
+
+import static com.example.pi4homemobile.APIs.ApiServiceCreator.createApiService;
+import static com.example.pi4homemobile.APIs.AuthenticationCreator.createAuthenticationHeader;
 
 public class FragmentLights extends Fragment {
 
     private boolean entranceLightOn;
     private boolean sidewalkLightOn;
-
-    private JsonDataReceiver jsonDataReceiver;
+    private Context context;
 
     @Nullable
     @Override
@@ -41,25 +39,9 @@ public class FragmentLights extends Fragment {
         final Switch entranceLightSwitch = view.findViewById(R.id.entranceLightSwitch);
         final Switch sidewalkLightSwtich = view.findViewById(R.id.sidewalkLightSwitch);
 
-        final Context context = getActivity().getApplicationContext();
-        PropertyReader propertyReader = new PropertyReader(context);
-        Properties myProperties = propertyReader.getMyProperties("config.properties");
-
-        String serverUrl = myProperties.getProperty("server.url");
-
-        final Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(serverUrl)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        final LightApiService apiService = retrofit.create(LightApiService.class);
-
-
-        String serverUser = myProperties.getProperty("spring.security.user.name");
-        String serverPass = myProperties.getProperty("spring.security.user.password");
-
-        final String authHeader = "Basic " + Base64.encodeToString((serverUser + ":" + serverPass).getBytes(), Base64.NO_WRAP);
-
+        Properties myProperties = readProperties();
+        LightApiService apiService = createApiService(myProperties, LightApiService.class);
+        final String authHeader = createAuthenticationHeader(myProperties);
 
         Call<List<Light>> lightStatusData = apiService.getLightStatusData(authHeader);
 
@@ -147,8 +129,9 @@ public class FragmentLights extends Fragment {
         return view;
     }
 
-
-    public void setJsonDataReceiver(JsonDataReceiver jsonDataReceiver) {
-        this.jsonDataReceiver = jsonDataReceiver;
+    private Properties readProperties() {
+        context = getActivity().getApplicationContext();
+        PropertyReader propertyReader = new PropertyReader(context);
+        return propertyReader.getMyProperties("config.properties");
     }
 }

@@ -11,8 +11,9 @@ import retrofit2.http.Header;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
-public interface LightApiService {
+public interface LightApiService
 
+{
     @GET("lightStatus")
     Call<List<Light>> getLightStatusData(@Header("Authorization") String authHeader);
 

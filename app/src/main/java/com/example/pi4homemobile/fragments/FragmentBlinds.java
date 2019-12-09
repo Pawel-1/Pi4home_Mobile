@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.SeekBar;
 import android.widget.Toast;
 
+import com.example.pi4homemobile.APIs.ApiServiceCreator;
 import com.example.pi4homemobile.APIs.BlindApiService;
 import com.example.pi4homemobile.MainActivity;
 import com.example.pi4homemobile.R;
@@ -22,6 +23,7 @@ import com.example.pi4homemobile.properties.PropertyReader;
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
@@ -32,6 +34,9 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+
+import static com.example.pi4homemobile.APIs.ApiServiceCreator.createApiService;
+import static com.example.pi4homemobile.APIs.AuthenticationCreator.createAuthenticationHeader;
 
 public class FragmentBlinds extends Fragment {
 
@@ -65,22 +70,16 @@ public class FragmentBlinds extends Fragment {
         smallWindowMiddle = view.findViewById(R.id.smallWindowMiddle);
         smallWindowRight = view.findViewById(R.id.smallWindowRight);
 
-        seekBarArrayList.add(largeWindowLeft);
-        seekBarArrayList.add(largeWindowRight);
-        seekBarArrayList.add(smallWindowLeft);
-        seekBarArrayList.add(smallWindowMiddle);
-        seekBarArrayList.add(smallWindowRight);
+        seekBarArrayList.addAll(Arrays.asList(largeWindowLeft, largeWindowRight, smallWindowLeft, smallWindowMiddle, smallWindowRight));
 
         Properties myProperties = readProperties();
-        BlindApiService blindApiService = createBlindApiService(myProperties);
+        BlindApiService blindApiService = createApiService(myProperties, BlindApiService.class);
 
         final String authHeader = createAuthenticationHeader(myProperties);
 
         Call<List<Blind>> blindStatusData = blindApiService.getBlindStatusData(authHeader);
 
-
         setUptInitialBlindState(blindStatusData);
-
 
         try {
             addListener(blindApiService, authHeader, initialBlindList, seekBarArrayList);
@@ -94,7 +93,6 @@ public class FragmentBlinds extends Fragment {
     }
 
 
-    //ToDo: debug - jak to zadziala w momencie ruszenia suwakiem? bedzie iterowac po wszystkim?
     private void addListener(BlindApiService blindApiService, String authHeader, List<Blind> initialBlindList, List<SeekBar> seekBarArrayList) throws NoSuchFieldException, IllegalAccessException {
 
         for (Blind blind : initialBlindList) {
@@ -161,27 +159,20 @@ public class FragmentBlinds extends Fragment {
         return propertyReader.getMyProperties("config.properties");
     }
 
-    private String createAuthenticationHeader(Properties myProperties) {
-        String serverUser = myProperties.getProperty("spring.security.user.name");
-        String serverPass = myProperties.getProperty("spring.security.user.password");
-
-        return "Basic " + Base64.encodeToString((serverUser + ":" + serverPass).getBytes(), Base64.NO_WRAP);
-    }
-
-    private BlindApiService createBlindApiService(Properties myProperties) {
-        String serverUrl = myProperties.getProperty("server.url");
-        OkHttpClient.Builder client = new OkHttpClient.Builder();
-        client.connectTimeout(15, TimeUnit.SECONDS);
-        client.readTimeout(15, TimeUnit.SECONDS);
-        client.writeTimeout(15, TimeUnit.SECONDS);
-
-        final Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(serverUrl)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        return retrofit.create(BlindApiService.class);
-    }
+//    private BlindApiService createBlindApiService(Properties myProperties) {
+//        String serverUrl = myProperties.getProperty("server.url");
+//        OkHttpClient.Builder client = new OkHttpClient.Builder();
+//        client.connectTimeout(15, TimeUnit.SECONDS);
+//        client.readTimeout(15, TimeUnit.SECONDS);
+//        client.writeTimeout(15, TimeUnit.SECONDS);
+//
+//        final Retrofit retrofit = new Retrofit.Builder()
+//                .baseUrl(serverUrl)
+//                .addConverterFactory(GsonConverterFactory.create())
+//                .build();
+//
+//        return retrofit.create(BlindApiService.class);
+//    }
 
     private void setUpBlindState(Blind blind) {
         double percentageMaskingState = blind.getPercentageMaskingState();
